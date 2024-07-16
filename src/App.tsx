@@ -13,6 +13,13 @@ import Sports from "./svg/sports.svg?react";
 
 import backgroundDesign from "./assets/hero.png";
 import coworking from "./assets/Coworking.png";
+import SpaceCard from './components/SpaceCard';
+import space1 from "./assets/space_1.png";
+import space2 from "./assets/space_2.png";
+import space3 from "./assets/space_3.png";
+import space4 from "./assets/space_4.png";
+import space5 from "./assets/space_5.png";
+import space6 from "./assets/space_6.png";
 
 const arr1 = [
   {text: "Community Events", icon: <Star/>}, 
@@ -26,6 +33,19 @@ const arr2 = [
   {text: "Quick Booking", icon: <Time/> },
   {text: "Cafe & Tea Bar", icon: <Sports/> }
 ]
+
+const arr3 = [
+  { text: "HSR Sector 6, Service Road", image: space1 },
+  { text: "HSR Sector 6, Service Road", image: space2 },
+  { text: "HSR Sector -6, 5th main Road", image: space3 },
+  { text: "HSR Sector -2, 27th main Road", image: space4 },
+  { text: "HSR Sector 6, Service Road", image: space5 },
+  { text: "HSR Sector -6, 5th main Road", image: space6 },
+]
+
+const Heading = ({text} : {text: string}) => {
+  return <h2 className='text-left text-2xl font-bold'>{text}</h2>
+}
 
 function App() {
 
@@ -54,7 +74,7 @@ function App() {
       </div>
 
       <div>
-        <h3 className='text-left text-2xl font-bold'>Why Choose Us?</h3>
+        <Heading text='Why Choose Us?' />
         <div className='flex flex-start py-6 w-full justify-between items-center flex-wrap lg:flex-nowrap gap-6'>
           {arr1.map(val => (
             <div className='flex flex-start flex-col lg:flex-row justify-start w-[45%] lg:w-full items-center p-2 lg:px-1 sm:drop-shadow-none sm:shadow-none drop-shadow-md shadow-md border sm:border-none m-1 lg:gap-2'>
@@ -69,6 +89,15 @@ function App() {
               {val.icon}
               <p className='text-[16px] sm:text-base py-1 sm:px-2'>{val.text}</p>
             </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <Heading text='Our Space Overview' />
+        <div className='flex mt-10 gap-10 flex-wrap justify-between'>
+          {arr3.map(element => (
+            <SpaceCard text={element.text} image={element.image} />
           ))}
         </div>
       </div>
