@@ -9,10 +9,10 @@ import ThreeArrow from "../svg/threearrow.svg?react";
 
 const SpaceCard = ({ text, image }: { text: string, image: string }) => {
 
-  return (<Card className="flex flex-col gap-1 drop-shadow-md w-[30%]">
-    <CardHeader className="flex flex-row gap-10 p-2">
+  return (<Card className="flex flex-col gap-1 drop-shadow-md lg:w-[30%] w-full">
+    <CardHeader className="flex flex-row gap-10 p-2 justify-between">
       <h3 className="text-md font-medium">{text}</h3> 
-      <div className="rounded border bg-slate-200 py-2 px-2 flex flex-col items-center gap-2 w-[20%]">
+      <div className="rounded border bg-slate-200 md:py-2 md:px-2 py-1 flex flex-col items-center gap-2 w-[20%]">
         <Arrow/> <p className="text-[12px]">6 kms</p>
       </div>
     </CardHeader>

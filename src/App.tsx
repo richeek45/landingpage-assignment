@@ -95,7 +95,7 @@ function App() {
 
       <div>
         <Heading text='Our Space Overview' />
-        <div className='flex mt-10 gap-10 flex-wrap justify-between hidden'>
+        <div className='flex mt-10 lg:gap-10 w-full flex-wrap justify-between'>
           {arr3.map(element => (
             <SpaceCard key={element.id} text={element.text} image={element.image} />
           ))}
