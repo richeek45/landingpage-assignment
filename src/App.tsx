@@ -106,7 +106,7 @@ function App() {
         </div>
       </div>
 
-      <div>
+      <div className='mb-16'>
         <Heading text='Download our app now' />
         <div className='py-5 drop-shadow-md border flex items-center gap-10 lg:hidden'>
           <FooterSmall className='mx-auto' />
@@ -126,7 +126,7 @@ function App() {
         </div>
       </div>
 
-      <footer className="bg-gray-800 text-white text-[16px] w-full ">
+      <footer className="bg-gray-800 text-white text-[16px] w-full fixed bottom-0 left-0 flex justify-center p-2">
         © Copyright 2024. Bhive Private Limited
       </footer>
     </div>
