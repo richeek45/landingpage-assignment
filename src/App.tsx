@@ -66,7 +66,7 @@ function App() {
       </nav>
 
 
-      <div className='relative flex lg:flex-row lg:justify-between flex-col-reverse justify-center h-[20%]'>
+      <div className='relative flex lg:flex-row lg:justify-between flex-col-reverse justify-center items-center h-[20%]'>
         <h1 className='lg:text-left 2xl:text-5xl xl:text-4xl lg:text-3xl sm:text-sm text-center font-bold w-full lg:block inline-block mb-12 text-wrap'>
           <p>Host your meeting with world-class amenities. </p>
           <p>Starting at <span className='text-yellow-400	'>₹199/-!</span></p>
