@@ -22,25 +22,25 @@ import space5 from "./assets/space_5.png";
 import space6 from "./assets/space_6.png";
 
 const arr1 = [
-  {text: "Community Events", icon: <Star/>}, 
-  {text: "Gym Facilities", icon: <Gym/> }, 
-  {text: "High-Speed Wifi", icon: <Wifi/> },
-  {text: "Sports Area", icon: <Cafe/> }
+  {text: "Community Events", icon: <Star/>, id: 1 }, 
+  {text: "Gym Facilities", icon: <Gym/>, id: 2  }, 
+  {text: "High-Speed Wifi", icon: <Wifi/>, id: 3  },
+  {text: "Sports Area", icon: <Cafe/>, id: 4 }
 ]
 const arr2 = [
-  {text: "Affordable", icon: <Money/>}, 
-  {text: "Comfort Lounges", icon: <Portrait/> }, 
-  {text: "Quick Booking", icon: <Time/> },
-  {text: "Cafe & Tea Bar", icon: <Sports/> }
+  {text: "Affordable", icon: <Money/>, id: 1 }, 
+  {text: "Comfort Lounges", icon: <Portrait/>, id: 2 }, 
+  {text: "Quick Booking", icon: <Time/>, id: 3 },
+  {text: "Cafe & Tea Bar", icon: <Sports/>, id: 4 }
 ]
 
 const arr3 = [
-  { text: "HSR Sector 6, Service Road", image: space1 },
-  { text: "HSR Sector 6, Service Road", image: space2 },
-  { text: "HSR Sector -6, 5th main Road", image: space3 },
-  { text: "HSR Sector -2, 27th main Road", image: space4 },
-  { text: "HSR Sector 6, Service Road", image: space5 },
-  { text: "HSR Sector -6, 5th main Road", image: space6 },
+  { text: "HSR Sector 6, Service Road", image: space1, id: 1 },
+  { text: "HSR Sector 6, Service Road", image: space2, id: 2 },
+  { text: "HSR Sector -6, 5th main Road", image: space3, id: 3 },
+  { text: "HSR Sector -2, 27th main Road", image: space4, id: 4 },
+  { text: "HSR Sector 6, Service Road", image: space5, id: 5 },
+  { text: "HSR Sector -6, 5th main Road", image: space6, id: 6 },
 ]
 
 const Heading = ({text} : {text: string}) => {
@@ -50,7 +50,7 @@ const Heading = ({text} : {text: string}) => {
 function App() {
 
   return (
-    <div className='mx-2 sm:mx-[10%] lg:mx-10 p-0 sm:p-2'> 
+    <div className='mx-2 sm:mx-[10%] lg:mx-5 p-0 sm:p-2'> 
       <nav className='flex justify-between p-2'>
         <Logo />
         <div className='border-yellow-400	border-2 rounded-md p-2 drop-shadow-md'>
@@ -65,7 +65,7 @@ function App() {
           <p>Starting at <span className='text-yellow-400	'>₹199/-!</span></p>
         </h1>
 
-        <div className='w-full flex justify-end'>
+        <div className='w-full flex lg:justify-end justify-center'>
           <img src={coworking} alt='coworking' className='object-cover' />
         </div>
         <div className='absolute top-0 left-0 hidden lg:block'>
@@ -75,17 +75,17 @@ function App() {
 
       <div>
         <Heading text='Why Choose Us?' />
-        <div className='flex flex-start py-6 w-full justify-between items-center flex-wrap lg:flex-nowrap gap-6'>
+        <div className='flex flex-start sm:py-6 w-full justify-between items-center flex-wrap lg:flex-nowrap gap-1 sm:gap-6'>
           {arr1.map(val => (
-            <div className='flex flex-start flex-col lg:flex-row justify-start w-[45%] lg:w-full items-center p-2 lg:px-1 sm:drop-shadow-none sm:shadow-none drop-shadow-md shadow-md border sm:border-none m-1 lg:gap-2'>
+            <div key={val.id} className='flex flex-start flex-col lg:flex-row justify-start w-[45%] h-16 lg:w-full items-center py-2 lg:px-1 sm:drop-shadow-none sm:shadow-none drop-shadow-md shadow-md border sm:border-none m-1 lg:gap-2'>
               {val.icon}
               <p className='text-[16px] sm:text-base py-1'>{val.text}</p>
             </div>
           ))}
         </div>
-        <div className='flex flex-start py-6 w-full justify-between items-center flex-wrap lg:flex-nowrap gap-6'>
+        <div className='flex flex-start sm:py-6 w-full justify-between items-center flex-wrap lg:flex-nowrap gap-1 sm:gap-6'>
           {arr2.map(val => (
-            <div className='flex flex-start flex-col lg:flex-row justify-start w-[45%] lg:w-full items-center p-2 lg:px-1 sm:drop-shadow-none sm:shadow-none drop-shadow-md shadow-md border sm:border-none m-1 lg:gap-2'>
+            <div key={val.id} className='flex flex-start flex-col lg:flex-row justify-start w-[45%] h-16 lg:w-full items-center py-2 lg:px-1 sm:drop-shadow-none sm:shadow-none drop-shadow-md shadow-md border sm:border-none m-1 lg:gap-2'>
               {val.icon}
               <p className='text-[16px] sm:text-base py-1 sm:px-2'>{val.text}</p>
             </div>
@@ -95,9 +95,9 @@ function App() {
 
       <div>
         <Heading text='Our Space Overview' />
-        <div className='flex mt-10 gap-10 flex-wrap justify-between'>
+        <div className='flex mt-10 gap-10 flex-wrap justify-between hidden'>
           {arr3.map(element => (
-            <SpaceCard text={element.text} image={element.image} />
+            <SpaceCard key={element.id} text={element.text} image={element.image} />
           ))}
         </div>
       </div>
