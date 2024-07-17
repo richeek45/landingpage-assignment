@@ -14,6 +14,7 @@ import FooterLarge from "./svg/footer.svg?react";
 import FooterSmall from "./svg/footer-mobile.svg?react";
 import GooglePlay from "./svg/play.svg?react";
 import AppleStore from "./svg/apple.svg?react";
+import ArrowSmall from "./svg/arrow-small.svg?react";
 
 import backgroundDesign from "./assets/hero.png";
 import coworking from "./assets/Coworking.png";
@@ -48,7 +49,9 @@ const arr3 = [
 ]
 
 const Heading = ({text} : {text: string}) => {
-  return <h2 className='text-left lg:text-2xl text-lg font-bold'>{text}</h2>
+  return (<h2 className='text-left lg:text-2xl text-lg font-bold flex justify-between items-center'>{text} 
+  <ArrowSmall className='lg:hidden block mx-2' />
+  </h2>)
 }
 
 function App() {
