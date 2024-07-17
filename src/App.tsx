@@ -10,6 +10,10 @@ import Money from "./svg/money.svg?react";
 import Portrait from "./svg/portrait.svg?react";
 import Time from "./svg/time.svg?react";
 import Sports from "./svg/sports.svg?react";
+import FooterLarge from "./svg/footer.svg?react";
+import FooterSmall from "./svg/footer-mobile.svg?react";
+import GooglePlay from "./svg/play.svg?react";
+import AppleStore from "./svg/apple.svg?react";
 
 import backgroundDesign from "./assets/hero.png";
 import coworking from "./assets/Coworking.png";
@@ -44,13 +48,13 @@ const arr3 = [
 ]
 
 const Heading = ({text} : {text: string}) => {
-  return <h2 className='text-left text-2xl font-bold'>{text}</h2>
+  return <h2 className='text-left lg:text-2xl text-lg font-bold'>{text}</h2>
 }
 
 function App() {
 
   return (
-    <div className='mx-2 sm:mx-[10%] lg:mx-5 p-0 sm:p-2'> 
+    <div className='mx-2 sm:mx-[10%] lg:mx-5 p-0 sm:p-2 flex flex-col gap-5'> 
       <nav className='flex justify-between p-2'>
         <Logo />
         <div className='border-yellow-400	border-2 rounded-md p-2 drop-shadow-md'>
@@ -102,6 +106,29 @@ function App() {
         </div>
       </div>
 
+      <div>
+        <Heading text='Download our app now' />
+        <div className='py-5 drop-shadow-md border flex items-center gap-10 lg:hidden'>
+          <FooterSmall className='mx-auto' />
+        </div>
+        <div className='py-5 drop-shadow-md border lg:flex items-center gap-10 hidden justify-around w-full'>
+          <FooterLarge />
+          <div className='flex flex-col w-1/2 gap-2'>
+            <p className='w-full'>
+              Boost your productivity with the BHIVE Workspace app. Elevate your workspace, collaborate efficiently, 
+              and unlock exclusive perks.
+            </p>
+            <div className='flex gap-4'>
+              <GooglePlay />
+              <AppleStore />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer className="bg-gray-800 text-white text-[16px] w-full ">
+        © Copyright 2024. Bhive Private Limited
+      </footer>
     </div>
   )
 }
